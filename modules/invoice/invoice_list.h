@@ -84,16 +84,28 @@ public:
         invoices.clear();
     }
 
-    void view() {
-        for (const auto& invoice : invoices) {
-            std::cout << "Company: "           << invoice.getCompany()
-                      << "\nShipping Charge: " << invoice.getShippingCharge()
-                      << "\nSubtotal: "        << invoice.getSubtotal()
-                      << "\nTax: "             << invoice.getTax()
-                      << "\nTotal: "           << invoice.getTotal()
-                      << "\nStatus: "          << (invoice.getPaymentStatus() ? "Paid" : "Unresolved")
+    void displayAll() {
+        for (int i = 0; i < invoices.size(); i++) {
+            std::cout << i << " -"
+                      << "\nCompany: "         << invoices[i].getCompany()
+                      << "\nShipping Charge: " << invoices[i].getShippingCharge()
+                      << "\nSubtotal: "        << invoices[i].getSubtotal()
+                      << "\nTax: "             << invoices[i].getTax()
+                      << "\nTotal: "           << invoices[i].getTotal()
+                      << "\nStatus: "          << (invoices[i].getPaymentStatus() ? "Paid" : "Unresolved")
                       << "\n\n";
         }
+    }
+
+    void view(int index) {
+        std::cout << index << " -"
+                  << "\nCompany: "         <<  invoices[index].getCompany()
+                  << "\nShipping Charge: " <<  invoices[index].getShippingCharge()
+                  << "\nSubtotal: "        <<  invoices[index].getSubtotal()
+                  << "\nTax: "             <<  invoices[index].getTax()
+                  << "\nTotal: "           <<  invoices[index].getTotal()
+                  << "\nStatus: "          << (invoices[index].getPaymentStatus() ? "Paid" : "Unresolved")
+                  << "\n\n";
     }
 
     //loop through vector and store in to csv
@@ -113,6 +125,18 @@ public:
         }
 
         file.close();
+    }
+
+    void setPaymentStatus(int index, bool status) {
+        invoices[index].setPaymentStatus(status);
+    }
+
+    int size() {
+        return invoices.size();
+    }
+
+    invoice operator[](int index) {
+        return invoices[index];
     }
 
 private:
