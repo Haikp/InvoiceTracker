@@ -7,12 +7,7 @@
 
 #include "invoice.h"
 
-//i think file manage should be done here, because i want to be able to
-// delete manage it here, and have the .txt file as just saves.
-//the problem i'm having is how i should initialize this object, which
-// if i want multiple save files, which i guess wouldnt be bad, i guess
-// the parameter to send in to the task_list is some credential, but
-// i think i'll add that later
+// TODO: delete invoice function
 class invoice_list {
 public:
     //read a file and parse it, csv file
@@ -106,6 +101,10 @@ public:
                   << "\nTotal: "           <<  invoices[index].getTotal()
                   << "\nStatus: "          << (invoices[index].getPaymentStatus() ? "Paid" : "Unresolved")
                   << "\n\n";
+    }
+
+    void deleteInvoice(int index) {
+        invoices.erase(invoices.begin() + index);
     }
 
     //loop through vector and store in to csv

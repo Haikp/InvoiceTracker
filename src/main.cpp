@@ -3,7 +3,7 @@
 #include "gui.h"
 
 int main() {
-    gui gui("src/test.csv");
+    gui gui("src/test1.csv");
 
     gui.displayMenu();
 }

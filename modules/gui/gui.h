@@ -17,12 +17,13 @@ public:
             char option;
             std::cout << "Options\n";
             std::cout << "(n) New Invoice\n";
-            std::cout << "(d) Display Invoices\n";
+            std::cout << "(x) Display Invoices\n";
             std::cout << "(v) View Invoice\n";
+            std::cout << "(d) Delete Invoice\n";
             std::cout << "(p) Set Payment Status\n";
             std::cout << "(s) Save Invoices\n";
             std::cout << "(c) Clear Invoices\n";
-            std::cout << "(x) Exit\n";
+            std::cout << "(q) Quit\n";
             std::cout << "Select an option: ";
             std::cin >> option;
 
@@ -41,11 +42,14 @@ public:
                 case 'n':
                     addInvoice();
                     break;
-                case 'd':
+                case 'x':
                     invoices.displayAll();
                     break;
                 case 'v':
                     viewInvoice();
+                    break;
+                case 'd':
+                    deleteInvoice();
                     break;
                 case 'p':
                     setPaymentStatus();
@@ -56,7 +60,7 @@ public:
                 case 'c':
                     invoices.clear();
                     break;
-                case 'x':
+                case 'q':
                     std::cout << "Exiting...\n";
                     return;
                 default:
@@ -128,6 +132,34 @@ public:
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "\n";
             invoices.view(index);
+            break;
+        }
+    }
+
+    void deleteInvoice() {
+        if (invoices.size() == 0) {
+            std::cout << "There are no invoices to view.\n";
+            return;
+        }
+
+        int index = 0;
+
+        while(true) {
+            std::cout << "There are " << invoices.size() << " invoices.\n";
+            std::cout << "Which invoice do you want to delete?\n";
+            std::cout << "Index Number: ";
+            std::cin >> index;
+
+            if (std::cin.fail() || index < 0 || index >= invoices.size()) {
+                std::cin.clear();
+                std::cin.ignore(10000, '\n');
+                std::cout << "Invalid input. Try again.\n\n";
+                continue;
+            }
+
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "\n";
+            invoices.deleteInvoice(index);
             break;
         }
     }
