@@ -1,0 +1,7 @@
+/Users/kelvin/CS/Projects/InvoiceTracker/build/CMakeFiles/app.dir
+/Users/kelvin/CS/Projects/InvoiceTracker/build/CMakeFiles/edit_cache.dir
+/Users/kelvin/CS/Projects/InvoiceTracker/build/CMakeFiles/rebuild_cache.dir
+/Users/kelvin/CS/Projects/InvoiceTracker/build/modules/invoice/CMakeFiles/edit_cache.dir
+/Users/kelvin/CS/Projects/InvoiceTracker/build/modules/invoice/CMakeFiles/rebuild_cache.dir
+/Users/kelvin/CS/Projects/InvoiceTracker/build/modules/gui/CMakeFiles/edit_cache.dir
+/Users/kelvin/CS/Projects/InvoiceTracker/build/modules/gui/CMakeFiles/rebuild_cache.dir
