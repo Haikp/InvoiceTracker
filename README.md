@@ -8,5 +8,5 @@ My understand is definitely not where I want it to be, but atleast its better.
 
 Edit: I think the best course of action is to port this code to javascript so that its easier for the intended audience. I made some more changes, and thought about how I should make the UI, and I think the best thing to do is to make it into a browser based UI. I'm not exactly excited to learn webasm just for this, and I think learning javascript would benefit me more anyways.
 
-####EDIT
-A javascript version of the project can be found (here)[https://github.com/Haikp/InvoiceTrackerJS]. This project was a request for me to make for someone, hence why I wanted something to make it easier for people who aren't the best with technology. This small project more or less serves as a way for me compare my oop fundamentals now to how it was before.
+### EDIT
+A javascript version of the project can be found [here](https://github.com/Haikp/InvoiceTrackerJS). This project was a request for me to make for someone, hence why I wanted something to make it easier for people who aren't the best with technology. This small project more or less serves as a way for me compare my oop fundamentals now to how it was before.
